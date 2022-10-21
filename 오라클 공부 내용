@@ -27,7 +27,7 @@ insert into 테이블명 values ('','',null,null);
 
 데이터 검색
 select 컬럼명, 컬럼명,... from 테이블명; 
-select * from 컬럼명; < 테이블의 모든 컬럼이 출력된다. ( * 을 넣으면 모든 컬럼이 출력)
+select * from 테이블명; < 테이블의 모든 컬럼이 출력된다. ( * 을 넣으면 모든 컬럼이 출력)
 이름과 나이만 출력하고싶으면
 select name, age from 테이블명;
 원하는 데이터(row)만 출력하고싶으면 where절 사용
