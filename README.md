@@ -99,18 +99,18 @@ select 컬럼명(생략가능),
 		from 테이블명;  
 출력예  
   
-컬럼명         별명  
+컬럼명	별명  
 값	     값1or2or3or4  
 값	     값1or2or3or4  
 값	     값1or2or3or4  
 값	     값1or2or3or4  
   
 case 문법 = select   
-		case when 조건식1 then 값1  
-		case when 조건식2 then 값2  
-		case when 조건식3 then 값3  
-		else 값4 end as '별명'  
-		from 테이블명;  
+	case when 조건식1 then 값1  
+	case when 조건식2 then 값2  
+	case when 조건식3 then 값3  
+	else 값4 end as '별명'  
+	from 테이블명;  
   
 출력예  
   
