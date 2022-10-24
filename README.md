@@ -10,14 +10,16 @@ conn c##아이디/비밀번호 << 생성한 아이디 로그인
 grant connect,resource,dba to c##아이디; << 생성한 계정에 권한을 부여(sys계정 접속한 상태에서 가능)  
 alter user c#아이디 identified by 비밀번호; << 만든 계정 비밀번호 변경  
 select * from tab;  
-테이블 생성 : create table 테이블명 (컬럼명 자료형,  
+-테이블 생성
+create table 테이블명 (컬럼명 자료형,  
                                    컬럼명 자료형,  
                                    컬럼명 자료형,  
                                    );  
                                      
-#select * from tab; < 현재 데이터베이스에 있는 테이블 정보 출력  
+select * from tab; < 현재 데이터베이스에 있는 테이블 정보 출력  
 desc 테이블명; < **테이블 상세 내용 출력  
-테이블에 데이터 입력  
+테이블에 데이터 입력 
+-
 insert into 테이블명(컬럼명,컬럼명,...) values(들어갈 값, 들어갈 값,...);  
 테이블에 전체 데이터를 넣는다면  
 insert into 테이블명 values (값, 값, ...); 으로 생략 가능  
