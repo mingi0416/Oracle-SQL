@@ -35,7 +35,6 @@ insert into 테이블명 values ('','',null,null);
 select * from tab; 현재 데이터베이스에 있는 테이블 정보 출력  
 desc 테이블명;  테이블 상세 내용 출력 
 select 컬럼명, 컬럼명,... from 테이블명;   
-select * from 컬럼명; < 테이블의 모든 컬럼이 출력된다. ( * 을 넣으면 모든 컬럼이 출력)  
 select * from 테이블명; < 테이블의 모든 컬럼이 출력된다. ( * 을 넣으면 모든 컬럼이 출력)  
 이름과 나이만 출력하고싶으면  
 select name, age from 테이블명;  
