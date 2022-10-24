@@ -1,6 +1,7 @@
-# Oracle-SQL
-오라클 공부내용  
-2022-10-20  
+### 오라클 공부하고 정리하는 곳
+  
+오라클 기본 명령어
+-
 sqlplus /nolog << sqlplus 진입 명령어  
 conn sys as sysdba << sys계정(데이터베이스 최상위 관리자 계정) 로그인  
 show user << 현재 접속중인 계정 확인  
@@ -25,7 +26,8 @@ insert into 테이블명 values ('','',null,null);
   
 테이블에서 null값 삭제하는 명령어 : delete from 테이블명 where name is null;  
 
-데이터 검색  
+데이터 검색 
+-
 select 컬럼명, 컬럼명,... from 테이블명;   
 select * from 컬럼명; < 테이블의 모든 컬럼이 출력된다. ( * 을 넣으면 모든 컬럼이 출력)  
 select * from 테이블명; < 테이블의 모든 컬럼이 출력된다. ( * 을 넣으면 모든 컬럼이 출력)  
@@ -37,6 +39,7 @@ select * from 테이블명 where name = '김민기';
 select * from 테이블명 where age>25;  
   
 데이터 변경하기  
+-
 update 테이블명 set 컬럼명=변경값, 컬럼명=변경값, .... where 조건;  
 human 테이블의 age를 100으로 변경하려면  
 update human set age=100; < human테이블의 모든 age 데이터가 100으로 변경됨  
@@ -47,26 +50,33 @@ update human set age=28, height=180 where name = '김민기';
 작업을 완료하려면 commit; 되돌리려면 rollback;  
   
 데이터 삭제하기  
+-
 delete from 테이블명 where 삭제조건;  
 나이가 30보다 큰 사람의 데이터를 삭제하려면  
 deletr from 테이블명 where age>30;  
 commit; or rollback;  
   
 테이블 삭제  
+-
 drop table 테이블명;  
   
 Null 처리  
+=
   
 NVL 함수 = NVL(대상, null인 경우 값)  
+-
 ex) select nvl(car, 0) from cars;  
 cars테이블에 car가 null일 경우 0으로 치환  
   
-NVL2 함수 = NVL2(대상, null 아닌경우에 값, null인 경우 값)  
+NVL2 함수 = NVL2(대상, null 아닌경우에 값, null인 경우 값) 
+-
 ex) select nvl2(car, car, '차량미보유') from cars;  
 cars 테이블에 car가 null이 아닌경우 car 로 치환  
 cars 테이블에 car가 null일 경우 '차량미보유'로 치환  
   
-Decode 문법 = select decode(컬럼명, 값1, 변경값1,    
+Decode 문법
+-
+select decode(컬럼명, 값1, 변경값1,    
 			           값2, 변경값2, ...   
 			           '나머지 경우 변경값');  
 			from 테이블명;  
@@ -79,7 +89,9 @@ select decode(department_id, 10, '10번 부서',
 			 '나머지 부서')  
 	    		 from 테이블명  
   
-Case 문법 = select 컬럼명(생략가능),  
+Case 문법
+-
+select 컬럼명(생략가능),  
 		case when 조건식1 then 값1  
 		case when 조건식2 then 값2  
 		case when 조건식3 then 값3  
@@ -110,19 +122,24 @@ case 문법 = select
   
   
 And or not 논리 연산자  
+=
   
 and연산  
+-
 select 컬럼명 from 테이블명 where 조건 and 조건;  
   
 or연산  
+-
 select 컬럼명 from 테이블명 where 조건 or 조건;  
   
 not연산  
+-
 select 컬럼명 from 테이블명 where 컬럼명!=조건;  
 select 컬럼명 from 테이블명 where not 컬럼명1=조건;  
   
   
 Between 연산자  
+-
 between은 특정 컬럼의 특정 범위에 해당하는 값을 출력하고 싶을 때 사용한다  
   
 where 컬럼명 between a and b - a,b를 '포함'한 사이값을 찾음  
@@ -143,6 +160,7 @@ between 'A' and 'CZZ' 로 해줘야 정상적으로 출력가능해서
 잘라주는게 깔끔하기 때문  
   
 In 연산자  
+-
   
 컬럼 in (값1, 값2, 값3) 해당 컬럼의 값으로 값1, 값2, 값3중 하나를 가지고 있으면 출력  
 컬럼 not in (값1, 값2, 값3) 해당 컬럼의 값으로 값1, 값2, 값3중 하나를 가지고 있으면 출력되지 않는다(값1,값2,값3이 없으면 출력된다)  
@@ -150,7 +168,8 @@ select * from 테이블명 where 컬럼명 in (값);
 select * from 테이블명 where 컬럼명 not in (값);  
 null은 사용불가함( is null 이나 nvl등을 사용해서 null처리 가능)  
   
-Like 연산자  
+Like 연산자 
+-
 like연산자는 부분 문자열을 이용해서 원하는 문자열을 찾을 수 있다.  
 where 컬럼명 like ‘부분 문자열’  
 부분문자열에 %는 문자가 없거나 하나 이상의 어떤 문자가 와도 상관 없다는 의미로  
