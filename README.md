@@ -216,6 +216,9 @@ select add_months(sysdate,12) from dual; 1년후를 의미
   
 order by절
 -
-order by절은 검색 결과를 정렬할 때 사용한다. DB는 기본적으로 검색결과를 정렬하지 않아서 정렬을 보장받고싶다면 order by절을 이용해서 정렬해야한다
-select 컬럼명 from 테이블명 where 조건 order by 컬럼 asc(오름차순) or 컬럼2 desc(내림차순)
-null일 경우 asc일 때 나중에 나오고 desc일때 먼저 나온다.
+order by절은 검색 결과를 정렬할 때 사용한다.  
+DB는 기본적으로 검색결과를 정렬하지 않아서 정렬을 보장받고싶다면 order by절을 이용해서 정렬해야한다  
+select 컬럼명 from 테이블명 where 조건 order by 컬럼 asc(오름차순) or 컬럼2 desc(내림차순)  
+asc, desc는 생략이 가능하며 생략할시 asc(오름차순)으로 적용되서 출력된다  
+null일 경우 asc일 때 나중에 나오고 desc일때 먼저 나온다.  
+
