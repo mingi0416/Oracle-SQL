@@ -71,12 +71,12 @@ Null 처리
   
 NVL 함수 = NVL(대상, null인 경우 값)  
 -
-ex) select nvl(car, 0) from cars;  
+ex) select 컬럼명 nvl(car, 0) from 테이블명(cars);  
 cars테이블에 car가 null일 경우 0으로 치환  
   
 NVL2 함수 = NVL2(대상, null 아닌경우에 값, null인 경우 값) 
 -
-ex) select nvl2(car, car, '차량미보유') from cars;  
+ex) select 컬럼명 nvl2(car, car, '차량미보유') from 테이블명(cars);  
 cars 테이블에 car가 null이 아닌경우 car 로 치환  
 cars 테이블에 car가 null일 경우 '차량미보유'로 치환  
   
