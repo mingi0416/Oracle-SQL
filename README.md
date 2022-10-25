@@ -191,3 +191,28 @@ where 컬럼명 not like ‘부분 문자열’ 부분 문자열에 해당하지
 -‘hi_’ 3글자인데 hi로 시작하는 모든 문자열  
 -‘_hi_’ 4문자이고 두번째위치에 hi가 들어간 모든 문자열  
 -‘_ _%’ 두글자 이상의 모든 데이터 (‘hi’)(0)  
+  
+Null 검색하기  
+-
+select * from 테이블명 where 조건부 is null; or is not null;  
+  
+컬럼 별명 as  
+-
+select 컬럼명 as 별명(띄워쓰기해서 as 생략 가능)  
+  
+Concatenation(||)  
+-
+||는 컬럼과 문자열을 합쳐서 새로운 컬럼과 데이터를 만들 수 있다.  
+select 컬럼명A||컬럼명B as 합친컬럼명(별명) from 테이블  
+출력하면 A+B가 나온다(성, 이름 합칠때 사용)  
+  
+시간계산  
+-
+select sysdate from dual;  
+select to_char(sysdate, 'YYYY:MM:dd HH24:MI:SS') ,to_char(sysdate,'YYYY:MM:dd HH24:MI:SS') from dual;  
+select add_months(sysdate,1) from dual; 1달후를 의미  
+select add_months(sysdate,-1) from dual; 1달전를 의미  
+select add_months(sysdate,12) from dual; 1년후를 의미  
+  
+
+
